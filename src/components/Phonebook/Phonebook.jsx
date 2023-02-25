@@ -6,8 +6,10 @@ import ContactForm from '../ContactForm/ContactForm';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addContact, setFilter, setDelite } from 'redux/action';
-import { getAllContacts, getFilterCont } from 'redux/selector';
+import { addContact, setDelite } from 'redux/contacts/contacts-actions';
+import { setFilter } from 'redux/filter/filter-actions';
+import { getAllContacts } from 'redux/contacts/contacts-selectors';
+import { getFilterCont } from 'redux/filter/filter-selector';
 
 const Phonebook = () => {
   const contacts = useSelector(getAllContacts);
@@ -64,7 +66,6 @@ const Phonebook = () => {
         <h2>Contact</h2>
         <ContactFilter handleChange={handleFilter} />
         <ContactList items={filterContact} removeContact={removeContact} />
-        {/*removeContact={removeContact}  */}
       </div>
     </div>
   );
