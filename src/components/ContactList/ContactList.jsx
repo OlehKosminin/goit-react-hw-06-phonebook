@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import styles from './contactList.module.scss';
 const ContactList = ({ items, removeContact }) => {
+  console.log('items: ', items);
   const contacts = items.map(({ id, name, number }) => (
     <li key={id}>
       {name}: {number}{' '}
