@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { persistStore, persistReducer } from 'redux-persist';
+import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import fifilterReduser from './filter/filter-reducer';
@@ -11,8 +11,8 @@ const rootReducer = combineReducers({
 });
 
 const persistConfig = {
-  key: 'root',
   storage,
+  key: 'root',
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
