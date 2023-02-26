@@ -6,8 +6,8 @@ import ContactForm from '../ContactForm/ContactForm';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { addContact, setDelite } from 'redux/contacts/contacts-actions';
-import { setFilter } from 'redux/filter/filter-actions';
+import { addContact, setDelete } from 'redux/contacts/contacts-slice';
+import { setFilter } from 'redux/filter/filter-slice';
 import { getAllContacts } from 'redux/contacts/contacts-selectors';
 import { getFilterCont } from 'redux/filter/filter-selector';
 
@@ -35,7 +35,7 @@ const Phonebook = () => {
   };
 
   const removeContact = id => {
-    const action = setDelite(id);
+    const action = setDelete(id);
     dispatch(action);
   };
 
