@@ -29,13 +29,15 @@ const Phonebook = () => {
       alert(`${name} is already in contacts`);
       return false;
     }
+    dispatch(addContact({ name, number }));
 
-    const action = addContact({ name, number });
-    dispatch(action);
+    // const action = addContact({ name, number });
+    // dispatch(action);
   };
 
   const removeContact = id => {
     const action = setDelete(id);
+    console.log('action: ', action);
     dispatch(action);
   };
 
